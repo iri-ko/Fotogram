@@ -12,29 +12,31 @@
             href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet"
         />
-        <link rel="icon" type="image/png" href="./favicon/favicon.png">
+        <link rel="icon" type="image/png" href="./favicon/favicon.png" />
     </head>
     <body onload="create_img_html()">
-
         <div class="overlay d_none" id="overlay">
-            <div class="close"><img src="./overlay/x.png" alt=""></div>
+            <div class="close"><img src="./overlay/x.png" alt="" /></div>
 
-            
-            <img id="hero_img"  class="img_c" src="">
-
+            <img id="hero_img" class="img_c" src="" />
 
             <div class="obottom" id="obottom">
                 <div class="swipe1">
-                    <img onclick="goleft()" src="./overlay/left-arrow-alt-regular-72.png">
+                    <img
+                        onclick="goleft()"
+                        src="./overlay/left-arrow-alt-regular-72.png"
+                    />
 
                     <span id="counter"></span>
 
-                    <img onclick="goright()" src="./overlay/right-arrow-alt-regular-72.png">
-
+                    <img
+                        onclick="goright()"
+                        src="./overlay/right-arrow-alt-regular-72.png"
+                    />
                 </div>
-            
+
                 <div class="swipe2">
-                    <span style="display: none;" id="img_name"></span>
+                    <span style="display: none" id="img_name"></span>
                     <span id="true_name"></span>
                 </div>
             </div>
@@ -51,13 +53,7 @@
             <div id="main_d">
                 <h1>Your personal photo album</h1>
 
-                <!--Warum geht Funktion in Button aber nicht onload?-->
-                <div id="photo_container" class="photo_container">
-                    
-                    <!--Bilder werden per JS generiert-->
-
-                
-                </div>
+                <div id="photo_container" class="photo_container"></div>
             </div>
         </main>
 
@@ -69,6 +65,5 @@
         </footer>
 
         <script src="./script.js" defer></script>
-
     </body>
 </html>
