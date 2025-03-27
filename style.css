@@ -176,8 +176,6 @@ html {
     }
     
 
-
-
     .close {
         height: 50px;
         width: 100%;
@@ -214,7 +212,7 @@ html {
         border-radius: 10px;
         @media (max-width:900px){
             width: 100%;
-            height: 90%;
+            height: 70%;
         }
     }
 
@@ -275,4 +273,8 @@ html {
 
 .d_none {
     display: none;
+}
+
+.no-scroll {
+    overflow: hidden;
 }
