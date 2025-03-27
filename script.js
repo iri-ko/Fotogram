@@ -14,13 +14,13 @@ const imageList = [
 ];
 
 
-function create_img_html() {
-    let container = document.getElementById("photo_container");
+function renderImg() {
+    const container = document.getElementById("photo_container");
 
 
     for (let index = 0; index < imageList.length; index++) {
 
-        let img = document.createElement("img");
+        const img = document.createElement("img");
 
         img.src = imageList[index];
 
@@ -43,88 +43,84 @@ function create_img_html() {
 
 function toggleOverlay(id) {
 
-    let overlayRef = document.getElementById("overlay");
+    const overlayRef = document.getElementById("overlay");
 
-    let imgRef = document.getElementById('hero_img')
+    const imgRef = document.getElementById('hero_img')
 
-    let numID = parseInt(id, 10);
+    const numID = parseInt(id, 10);
 
-    //Fehlermeldung 404 undefined - WHY??? 
     imgRef.src = imageList[id];
 
-
     // für Anzeige unter Bild (z.B. 1 / 12)
-    let counterRef = document.getElementById('counter');
+    const counterRef = document.getElementById('counter');
     counterRef.innerHTML = +numID+1 + " / " + imageList.length;
 
-
-    let nameRef = document.getElementById('img_name');
+    const nameRef = document.getElementById('img_name');
     nameRef.innerHTML = imageList[id];
 
-    let truenameRef = document.getElementById('true_name');
+    const truenameRef = document.getElementById('true_name');
     truenameRef.innerHTML = imageList[id].slice(6);
     overlayRef.classList.toggle("d_none");
 }
 
 
-function toggleOverlayonClosing() {
+function toggleOverlayOnClosing() {
 
-
-    let overlayRef = document.getElementById("overlay");
+    const overlayRef = document.getElementById("overlay");
     overlayRef.classList.toggle("d_none");
 }
 
 
-function goright() {
-    let current_img_src = document.getElementById('img_name').innerHTML.trim();
+function showNext() {
+    const currentImgSrc = document.getElementById('img_name').innerHTML.trim();
 
-    let current_index = imageList.indexOf(current_img_src);
+    const currentIndex = imageList.indexOf(currentImgSrc);
 
-    if (current_index === -1) {
+    if (currentIndex === -1) {
         console.error("Current image source not found in the array!");
         return;
     }
 
     // modulo operation (%) sorgt dafür,dass Array wieder auf Index 0 springt.
-    let next_index = (current_index + 1) % imageList.length;
+    const nextIndex = (currentIndex + 1) % imageList.length;
 
-    let new_img_Ref = document.getElementById('hero_img');
-    new_img_Ref.src = imageList[next_index];
+    const newImgRef = document.getElementById('hero_img');
+    newImgRef.src = imageList[nextIndex];
 
-    let nameRef = document.getElementById('img_name');
-    nameRef.innerHTML = imageList[next_index];
+    const nameRef = document.getElementById('img_name');
+    nameRef.innerHTML = imageList[nextIndex];
 
-    let counterRef = document.getElementById('counter');
-    counterRef.innerHTML = (next_index + 1) + " / " + imageList.length;
+    const counterRef = document.getElementById('counter');
+    counterRef.innerHTML = (nextIndex + 1) + " / " + imageList.length;
 
-    let truenameRef = document.getElementById('true_name');
-    truenameRef.innerHTML = imageList[next_index].slice(6);
+    const truenameRef = document.getElementById('true_name');
+    truenameRef.innerHTML = imageList[nextIndex].slice(6);
 }
 
 
-function goleft(){
+function showPrevious(){
 
-    let current_img_src = document.getElementById('img_name').innerHTML.trim();
+    const currentImgSrc = document.getElementById('img_name').innerHTML.trim();
 
-    let current_index = imageList.indexOf(current_img_src);
+    const currentIndex = imageList.indexOf(currentImgSrc);
 
-    if (current_index === -1) {
+    if (currentIndex === -1) {
         console.error("Current image source not found in the array!");
         return;
     }
 
-    let previous_index = (current_index -1 + imageList.length) % imageList.length;
+    const previous_index = (currentIndex -1 + imageList.length) % imageList.length;
 
-    let new_img_Ref = document.getElementById ('hero_img');
-    new_img_Ref.src = imageList[previous_index];
+    const newImgRef = document.getElementById ('hero_img');
+    newImgRef.src = imageList[previous_index];
 
-    let nameRef = document.getElementById('img_name');
+    const nameRef = document.getElementById('img_name');
     nameRef.innerHTML = imageList[previous_index];
 
-    let counterRef = document.getElementById('counter');
+    const counterRef = document.getElementById('counter');
     counterRef.innerHTML = (previous_index + 1) + " / " + imageList.length;
 
-    let truenameRef = document.getElementById('true_name');
+    const truenameRef = document.getElementById('true_name');
     truenameRef.innerHTML = imageList[previous_index].slice(6);
 
 }
@@ -136,7 +132,7 @@ document.getElementById("overlay").addEventListener("click", function(event) {
     
 
     if (!obottom.contains(event.target)) {
-        toggleOverlayonClosing();
+        toggleOverlayOnClosing();
     } else {
         
         event.stopPropagation();

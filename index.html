@@ -14,7 +14,7 @@
         />
         <link rel="icon" type="image/png" href="./favicon/favicon.png" />
     </head>
-    <body onload="create_img_html()">
+    <body onload="renderImg()">
         <div class="overlay d_none" id="overlay">
             <div class="close"><img src="./overlay/x.png" alt="" /></div>
 
@@ -23,14 +23,14 @@
             <div class="obottom" id="obottom">
                 <div class="swipe1">
                     <img
-                        onclick="goleft()"
+                        onclick="showPrevious()"
                         src="./overlay/left-arrow-alt-regular-72.png"
                     />
 
                     <span id="counter"></span>
 
                     <img
-                        onclick="goright()"
+                        onclick="showNext()"
                         src="./overlay/right-arrow-alt-regular-72.png"
                     />
                 </div>
