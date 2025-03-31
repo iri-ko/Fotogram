@@ -171,7 +171,7 @@ html {
     padding: 50px;
 
     @media (max-width:900px){
-        padding: 0px !important;
+        padding: 0%;
 
     }
     
@@ -266,6 +266,10 @@ html {
             @media (max-width:900px){
                 justify-content: center;
                 height: 40px;
+
+                #img_name {
+                    display: none;
+                }
             }
         }
     }
